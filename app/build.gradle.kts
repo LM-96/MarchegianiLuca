@@ -9,7 +9,6 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
-    jacoco
 }
 
 repositories {
@@ -23,9 +22,22 @@ dependencies {
 
     // This dependency is used by the application.
     implementation("com.google.guava:guava:29.0-jre")
+
+//HTTP
+    // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+    implementation("org.apache.httpcomponents:httpclient:4.5.13")
+//JSON
+    // https://mvnrepository.com/artifact/org.json/json
+    implementation("org.json:json:20201115" )
+    // https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple
+    implementation("com.googlecode.json-simple:json-simple:1.1.1")
+//SOCKET.IO
+// https://mvnrepository.com/artifact/javax.websocket/javax.websocket-api
+    implementation("javax.websocket:javax.websocket-api:1.1")   //javax.websocket api is only the specification
+    implementation("org.glassfish.tyrus.bundles:tyrus-standalone-client:1.9")
 }
 
 application {
     // Define the main class for the application.
-    mainClass.set("it.unibo.wenvusage.App")
+    mainClass.set("it.unibo.resumableBoundaryWalker.ResumableBoundaryWalker")
 }
