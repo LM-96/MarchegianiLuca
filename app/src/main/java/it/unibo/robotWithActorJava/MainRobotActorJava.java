@@ -9,7 +9,6 @@ configuration file IssProtocolConfig.txt
 */
 package it.unibo.robotWithActorJava;
 import it.unibo.consolegui.ConsoleGuiActor;
-import it.unibo.supports2021.ActorBasicJava;
 import it.unibo.supports2021.IssWsHttpJavaSupport;
 
 public class MainRobotActorJava {
@@ -21,7 +20,7 @@ public class MainRobotActorJava {
 
         //while( ! support.isOpen() ) ActorBasicJava.delay(100);
 
-        BoundaryWalkerActor ra = new BoundaryWalkerActor("robotAppl", support);
+        ResumableBoundaryWalkerActor ra = new ResumableBoundaryWalkerActor("robotAppl", support);
         support.registerActor(ra);
 
         ConsoleGuiActor console = new ConsoleGuiActor();

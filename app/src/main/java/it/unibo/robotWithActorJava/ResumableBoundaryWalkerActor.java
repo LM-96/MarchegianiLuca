@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
 
-public class BoundaryWalkerActor extends ActorBasicJava {
+public class ResumableBoundaryWalkerActor extends ActorBasicJava {
     final String forwardMsg   = "{\"robotmove\":\"moveForward\", \"time\": 350}";
     final String backwardMsg  = "{\"robotmove\":\"moveBackward\", \"time\": 350}";
     final String turnLeftMsg  = "{\"robotmove\":\"turnLeft\", \"time\": 300}";
@@ -26,7 +26,7 @@ public class BoundaryWalkerActor extends ActorBasicJava {
     private String savedEndmove;
     private State savedState;
 
-    public BoundaryWalkerActor(String name, IssWsHttpJavaSupport support) {
+    public ResumableBoundaryWalkerActor(String name, IssWsHttpJavaSupport support) {
         super(name);
         this.support = support;
     }
