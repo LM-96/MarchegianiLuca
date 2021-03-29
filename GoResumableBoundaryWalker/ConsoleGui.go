@@ -21,6 +21,8 @@ func main() {
 	mainWindow := winc.NewForm(nil)
 	mainWindow.SetSize(330, 150) // (width, height)
 	mainWindow.SetText("ResumableBoundaryWalker")
+	appIco, _ := winc.NewIconFromFile("./app.ico")
+	mainWindow.SetIcon(0, appIco)
 
 	resume := winc.NewPushButton(mainWindow)
 	resume.SetText("RESUME")
