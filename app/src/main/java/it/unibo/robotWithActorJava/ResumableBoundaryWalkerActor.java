@@ -16,10 +16,10 @@ public class ResumableBoundaryWalkerActor extends ActorBasicJava {
     final String turnRightMsg = "{\"robotmove\":\"turnRight\", \"time\": 300}";
     final String haltMsg      = "{\"robotmove\":\"alarm\", \"time\": 100}";
 
-    private enum State {start, walking, obstacle, end, halted };
+    private enum State {pause, walking, obstacle, halted };
     private IssWsHttpJavaSupport support;
-    private State curState       =  State.halted ;
-    private int stepNum          = 5;
+    private State curState       =  State.pause ;
+    private int stepNum          = 0;
     private RobotMovesInfo moves = new RobotMovesInfo(true);
 
     private String savedMove;
@@ -45,10 +45,12 @@ public class ResumableBoundaryWalkerActor extends ActorBasicJava {
     protected void fsm(String x, String y){
         System.out.println( myname + " | fsm state=" + curState + " stepNum=" + stepNum + " move=" + x + " endmove=" + y);
         switch( curState ) {
-            case start: {
-                moves.showRobotMovesRepresentation();
-                doStep();
-                curState = State.walking;
+            case pause: {
+                if(x.equals("RESUME") && y.equals("robotcmd")) {
+                    stepNum = 1;
+                    doStep();
+                    curState = State.walking;
+                }
                 break;
             }
             case walking: {
@@ -73,40 +75,28 @@ public class ResumableBoundaryWalkerActor extends ActorBasicJava {
 
             case obstacle :
                 if( x.equals("turnLeft") && y.equals("true")) {
+                    moves.updateMovesRep("l");
+                    moves.showRobotMovesRepresentation();
                     if( stepNum < 4) {
                         stepNum++;
                         curState = State.walking;
                         doStep();
                     }else{  //at home again
-                        this.curState = State.end;
-                        fsm("", "");
+                        this.curState = State.pause;
+                        moves.getMovesRepresentationAndClean();
                         //turnLeft(); //to force state transition
                     }
-                    moves.updateMovesRep("l");
-                    moves.showRobotMovesRepresentation();
-                } else if (x.equals("STOP") && stepNum >= 4) {
+                } else if (x.equals("STOP") && y.equals("robotcmd")) {
                     this.savedState = this.curState;
                     this.curState = State.halted;
                 }
                 break;
 
-            case end : {
-                this.curState = State.halted;
-                this.stepNum++;
-                fsm("", "");
-                break;
-            }
-
             case halted : {
                 if(x.equals("RESUME") && y.equals("robotcmd")) {
-                    if(stepNum <= 4) {
                         this.curState = this.savedState;
                         resumeByHalt();
-                    } else {
-                        this.curState = State.start;
-                        reset();
-                    }
-                } else if(y.equals("endmove")) {
+                } else if(y.equals("true")) {
                    saveMsg(x, y);
                 }
                 break;
