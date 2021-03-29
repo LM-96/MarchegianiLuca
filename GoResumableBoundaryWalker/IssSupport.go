@@ -1,15 +1,18 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"net/url"
+	"os"
 	"strings"
 
 	"github.com/gorilla/websocket"
 )
 
 const MAX_BUFF = 20
-const WS_URL = "ws://localhost:8091"
+
+var WS_URL = ""
 
 func StartSupport(commands_c chan string, movement_c chan string, sensor_c chan string, sonar_c chan string, terminate chan bool, done_out_supp chan bool, error_out_supp chan string) {
 
@@ -17,6 +20,39 @@ func StartSupport(commands_c chan string, movement_c chan string, sensor_c chan 
 	movement_in_supp := make(chan string, MAX_BUFF)
 	sensor_in_supp := make(chan string, MAX_BUFF)
 	sonar_in_supp := make(chan string, MAX_BUFF)
+
+	wsini, err := os.Open("./settings/ws.ini")
+	if err != nil {
+		fmt.Printf("support\t| error while opening configuration file for ws")
+		done_out_supp <- false
+		error_out_supp <- err.Error()
+		fmt.Println("support\t| terminated with errors")
+		return
+	}
+
+	defer wsini.Close()
+	in := bufio.NewScanner(wsini)
+	for in.Scan() {
+		line := in.Text()
+
+		toks := strings.Split(line, "\"")
+		if len(toks) >= 2 {
+			key := strings.Split(toks[0], ":")[0]
+
+			switch key {
+			case "url":
+				WS_URL = toks[1]
+			}
+		}
+	}
+
+	if WS_URL == "" {
+		fmt.Println("support\t| url not present in ws configuration file")
+		done_out_supp <- false
+		error_out_supp <- "url not present in ws configuration file"
+		fmt.Println("support\t| terminated with errors")
+		return
+	}
 
 	u, _ := url.Parse(WS_URL)
 	c, _, err := websocket.DefaultDialer.Dial(u.String(), nil)

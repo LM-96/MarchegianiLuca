@@ -70,6 +70,7 @@ func fsm(x string, y string) {
 				doStep()
 			} else {
 				state = "paused"
+				step = 0
 				cleanrMovesRepresentation()
 
 			}
