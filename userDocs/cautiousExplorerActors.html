@@ -1,0 +1,552 @@
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <!--
+<link rel="stylesheet" type="text/css" href="../css/issStyle1.css">
+<script type="text/javascript" src="../css/issStyle.js"></script>
+-->
+<style type="text/css">
+body
+{
+    margin-left:  30px;
+    margin-right: 30px;
+};
+
+P
+{
+    font-family: Tahoma;
+    font-size: 10pt;
+};
+
+a, a:visited, a:active, a:link, a:hover {
+    text-decoration: underline;
+    color: #545454;
+    background-color: transparent;
+	font-size: 93%;
+}
+
+a:hover {
+    background-color: #cccccc;
+}
+
+
+hr {
+    clear: both;
+    height: 1px;
+    color: #242424;
+    background-color: transparent;
+}
+
+h1, h2, h3 {
+    color: #242424;
+    clear: left;
+    font: 100% Tahoma, Helvetica, Arial, sans-serif;
+    margin-bottom: 0.5em;
+    padding-top: 0.5em;
+	border-radius: 10px;
+	padding: 5px;
+}
+
+top {
+	width: 100%;
+}
+
+
+#i {
+    color: #ff1010;
+}
+tt{
+	font-family: "Arial";
+    font-size: 90%;
+	color: #006600;
+}
+em{
+	font-family: "Arial";
+    font-size: 80%;
+	font-weight: bold;
+	border-style:solid;
+	border-color: #abe876;
+    color: #1632cc;
+}
+bc{
+	font-family: "Arial";
+	font-size: 90%;
+	font-weight: bold;
+    color: #990000;
+	background-color: #fcf8c7;
+}
+ks{
+	font-family: "Arial";
+	font-weight: bold;
+    color: #0000CD	;
+	font-size: 90%;
+}
+kc{
+	font-family: "Arial";
+	font-weight: bold;
+    color: #008000	;
+	font-size: 90%;
+}
+pre{
+	font-family: "Consolas";
+	font-size: 85%;
+	background-color: #f5f5f5;
+	border: 1.5px solid silver;
+	padding: 5px;
+}
+m{
+	font-family: "Helvetica";
+	line-height: 100%;
+ 	font-size: 75%;
+}
+div.body{
+	 
+    font-size: 18px;
+}
+k{
+    color: #990000;
+	font-weight: bold;
+	font-size: 90%;
+}
+h1 {
+    font-size: 150%;
+    background-color: #b2c0ff;
+	padding: 10px;
+}
+
+h2 {
+    background-color: #9ed8ff;
+    font-size: 130%;
+}
+
+h3 {
+	background-color: #e6ccff;
+    font-size: 100%;
+}
+h4 {
+    background-color: #ccffcc;
+    font-size: 100%;
+	width: 95%;
+	border-radius: 5px;
+	padding: 2px;
+}
+h5 {
+    background-color: #d5ffb0;
+    font-size: 100%;
+
+}
+div.req{
+	background-color: #d9ffb3;
+    font-size: 18px;
+	width: 700px;
+    border: 3px solid green;
+    padding: 15px;
+    margin: 10px;
+}
+div.remark{
+	background-color: #E3F2FD;
+    border: 1.5px solid #d5f2ed;
+    padding: 15px;
+    margin: 10px;
+	border-radius: 25px;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+ol, ul, li {
+  margin: 0;
+  margin-left: 10px;
+  padding: 0;
+  padding-bottom: 5px;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+img {
+	border: 1.5px solid #d5f2ed
+
+}
+
+a, a:visited, a:active, a:link, a:hover {
+    text-decoration: underline;
+    color: #545454;
+    background-color: transparent;
+}
+
+div.wrapdesc{
+	width: 90%;
+	margin: auto;
+}
+
+div.imagedesc{
+	width: 85%;
+	margin: auto;
+}
+</style>
+    
+<head>
+   
+<title>CautiousExplorerActors</title></head>
+    
+<body>
+<div id="top">
+<h1>Lab ISS | the project cautiousExplorer with Actors<font size="5"></font> </h1>
+</div>  
+
+<div class="body"> 
+<h2>Introduction</h2>
+This case-study deals with the design and development of proactive/reactive software systems 
+based on the concept of Actor, as introduced in 
+<a href="https://htmlpreview.github.io/?
+https://github.com/anatali/issLab2021/blob/main/it.unibo.supports/userDocs/wssupportAsActorJava.html" target="web">
+LabIss2021 | wshttp support with ActorBasicJava observers</a>.
+ 
+<h2>Requirements</h2>
+
+ 
+<div class="remark">
+Design and build a software system that allow the robot described in 
+<a href="https://htmlpreview.github.io/?https://github.com/anatali/issLab2021/blob/master/it.unibo.virtualRobot2020/userDocs/VirtualRobot2021.html" target="lab"><em>VirtualRobot2021.html</em></a>
+ to exibit the following behaviour:
+<ul>
+<li>the robot lives in a rectangular room, delimited by walls that includes one or more devices (e.g. sonar) able to detect the presence
+of obstacles, including the robot itself;</li>
+<li>the robot has a <ks>den</ks> for refuge, located in the position shown in the picture
+<center><img src="./img/cautiousExplorer.png" alt="cautiousExplorer" width="20%" ></center></li>
+<li>the robot works as an <i>explorer of the room</i>. Starting from its <ks>den</ks>,  the goal of the robot is to
+create a map of the room that records the position of the fixed obstacles. 
+The presence of mobile obstacles in the room is (at the moment) excluded;</li>
+<li>since the robot is <i>'cautious'</i>,  it  returns immediately to the <ks>den</ks> as soon as it finds an obstacle.
+It also stops for a while (e.g. 2 seconds), when it 'feels' that the sonar has detected its presence.
+</li>
+ 
+</ul>
+</div>
+
+ <h3>Delivery</h3>
+The customer requires to receive at <k>12 noon on April 6</k> a file named 
+<pre>
+cognome_nome_cea.pdf
+</pre>
+including a (synthetic) description of the project  (preceded by a proper analysis of the problem)
+based on components of type <a href="../../it.unibo.supports/userDocs/wssupportAsActorJava.html" target="web">ActorBasicJava</a>
+and a reference to a <i>first working prototype</i> (even with limited capabilities) of the system. 
+ 
+ <h3>Meeting</h3>
+ A SPRINT-review phase with the customer is planned (via Teams) at <k>5.15 pm on April 6</k>.
+
+<h2>Requirement analysis</h2>
+ <div class="remark">
+The constumer requires to design and buid a software system that is able to drive a <i>robot</i> to walk in a rectangular room in order to explore the sorrounding reality. The consumer also specifies that the robot lives in a rectangular room.
+	 </br></br>The interview with the constumer clarified the meaning of the used nouns that are the following:
+<ul>
+    <li><ks>robot</ks>: device already owned by the consumer and able to walk by receiving commands. The robot is fully described in <a href="https://htmlpreview.github.io/?https://github.com/anatali/issLab2021/blob/master/it.unibo.virtualRobot2020/userDocs/VirtualRobot2021.html" target="lab">VirtualRobot2021.html</a>, a document provided by the consumer;</li>
+    <li><ks>rectangular room</ks>: the room in wich the robot lives and walks, delimited by <ks>walls</ks>;</li>
+    <li><ks>den</ks>: the <k>home</k> of the robot (a sort of landmark), in other words the place in the room where he starts the <k>exploration sessions</k> and goes back when finished; the den must be located near a wall as stated in the requirements:</li>
+    <li><ks>obstacles</ks>: entities external to the robot that can stay into the environment; at the moment the obstacles are permanent and each of them occupies a portion of the environment in which the robot cannot pass;</li>
+    <li><ks>sonar</ks>: another entity external to the robot that is a device able to detect the presence of the robot; </li>
+    <li><ks>explorer</ks>: the <i>role</i> of the robot that represents his aim to find the obstacles around the den;</li>
+    <li><ks>position</ks>: an identifiable place (we could also call it <i>point</i>) of the environment that can only be occupied by one entity (obstacles, devices or robot) at a time;</li>
+    <li><ks>cautious</ks>: the property of the robot to return immediately at the den when he encounter an obstacle; in addition to this, the robot must stop for a while when it feels that a sonar has detected his presence and then return to the home;</li>
+    <li><ks>map</ks>: a support to the robot that make it able to remember details about the room like the position of the obstacles;</li>
+</ul>
+</br>
+
+	After the analysis of the nouns, we introduced a new one:
+	<ul>
+		<li><ks>exploration session</ks>: it consists in these steps:
+			<ol>
+				<li>robot start moving from the den;</li>
+				<li>robot explore environment moving in it (<ks>round trip</ks>);</li>
+				<li>robot finds an obstacle by colliding with it or feels that a sonar has detected him;</li>
+				<li>after collision, robot immediately return ad the den (<ks>return trip</ks>); in the case of sonar detenction, the robot first waits for a while and after returns to the den.</li>
+			</ol></li>
+	</ul>
+
+About the meaning of the verbs used in the interaction with the consumer:
+<ul>
+    <li><ks>lives</ks>: the action of the robot to stay and move only in the closed environment;</li>
+	<li><ks>detect</ks>: the action of a sonar to notice the presence of the robot; the presence will be notify in the way specificied in the document <a href="https://htmlpreview.github.io/?https://github.com/anatali/issLab2021/blob/master/it.unibo.virtualRobot2020/userDocs/VirtualRobot2021.html" target="lab">VirtualRobot2021.html</a>; when a sonar detect the robot, optionally he return to his den;</li>
+	<li><ks>move</ks>: the action of the robot to walk into the environment thanks to the mean of locomotion it is equipped with; consumer specified that the movements of the robot can be random or oganized with an organized logic;</li>
+	<li><ks>find</ks>: the action of the robot to collide with an obstacle in order to identify its position.</li>
+	<li><ks>return</ks>: the action of the robot to move towards the den; the consumer as not specify details of the route that he should take.</li>
+</ul>
+</br>
+
+<k>The robot is able to receive command in <i>cril language</i> coded into JSON strings</k> that can be <k>encapsulated in HTTP POST messages</k> or <k>sent on a websocket</k> as specified in <a href="https://htmlpreview.github.io/?https://github.com/anatali/issLab2021/blob/master/it.unibo.virtualRobot2020/userDocs/VirtualRobot2021.html#interaction" target="lab">VirtualRobot2021.html</a>. Then the software system to be designed must use these mechanism to carry out and manage the exploration of the robot.
+
+The consumer has not provided details about:
+<ul>
+	<li>the number of the <i>exploration sessions</i>;</li>
+	<li>when the application should stop;</li>
+	<li>the route of the exploration;</li>
+	<li>the route of the return trip;</li>
+	<li>the length of the time the robot must stop when a sonar has detected him;</li>
+</ul>
+
+<h3>User Stories</h3>
+
+<table style="width:98%">
+<tbody>	
+<tr>
+<td style="width:60%" >
+ 
+	<center><ks>First user story</ks></center></br>
+	
+The user places the robot in the <k>den</k> facing south and then he starts the system. The system start the exploration session by moving the robot randomly (dark red movements into the right image).
+<br/>
+The <k>user can't stop the execution of a single exploration session</k> and the system must proceed autonomously without user interactions. <k>When the robot collide with an obstacle, the system must send the correct commands in order to move the robot back to the den</k>. The movements of the robot must be the same of the round trip but inverted like in the right image (dark green movements).
+<br/><br/>
+At the single exploration session, the robot must be positioned in the den ready for another session.
+ 
+</td>
+<td><center><img src="./img/user_story_1.png" alt="User Story 1" width="80%" ></center>
+</td>
+</tr>
+	
+<tr>
+<td style="width:60%" >
+ 
+	<center><ks>Second user story</ks></center></br>
+	
+The user places the robot in the <k>den</k> facing south and then he starts the system. The system start the exploration session by moving the robot randomly (dark red movements into the right image).
+<br/>
+The <k>user can't stop the execution of a single exploration session</k> and the system must proceed autonomously without user interactions. <k>When the sonar detect the robot, the system must send the correct commands in order to stop the robot waiting for a while and after move the robot back to the den</k>. The movements of the robot must be the same of the round trip but inverted like in the right image (dark green movements).
+<br/><br/>
+At the single exploration session, the robot must be positioned in the den ready for another session.
+ 
+</td>
+<td><center><img src="./img/user_story_2.png" alt="User Story 2" width="80%" ></center>
+</td>
+</tr>
+ </tbody>
+</table>
+</br>
+In these user stories we supposed that the return trip must be the same of the round but in future we could make this mechanism smarter using the map (e.g. calculating the trip using the map).
+About the exploration instead, we think that an efficient way is to proceed by making a sort of <i>waves</i>. We will delve into this topic in the problem analysis.
+</div>
+
+<h2>Problem analysis</h2>
+ <div class="remark">
+
+    <h3>Relevant aspects</h3>
+<ol>
+<li>From the requirement analysis it emerged that the system that is about to be implemented must communicate with the robot via HTTP or via websocket using commands coded in JSON String. In order to do this it need to create a <k>distributed system</k> with two main components:
+<ul>
+    <li>the <ks>robot</ks> provided by the consumer;</li>
+    <li>an <ks>application</ks> able to send the command to the robot and manage the responses.</li>
+</ul>The application will be called <ks><em>cautiousExplorerActors</em></ks>.</li>
+	</br>
+	<li>As anticipated, the robot and the application can communicate:
+<ul>
+    <li>sending messages to the port 8090 with <ks>HTTP Request/Response</ks>;</li>
+    <li>sending messages to the port 8091 using <ks>websocket</ks>.</li>
+</ul>In addition to, as specified, the commands must be coded in <ks>JSON string</ks>.
+	</li>
+</ol>
+
+</br>
+The communication is not always <i>request/response</i> and, in addition to this, collisions and sonar informations can't be received via HTTP: <k>it means that we must use websocket</k> in order to satisfy the requirements. Then, we have an <k>operative abstraction-gap</k> even if there are lots of libraries for websocket in Java.
+Furthermore, in order to separate the parts of the software system, we decided to use <a href="https://en.wikipedia.org/wiki/Actor_model" target="web"><em>actor model programming</em></a> so we could have another operative abstraction-gap. Fontunately, the consumer has provided a library that allows us to easily use actor model in Java (<a href="https://htmlpreview.github.io/?
+https://github.com/anatali/issLab2021/blob/main/it.unibo.supports/userDocs/wssupportAsActorJava.html" target="web">wssupportAsActorJava.html</a>).
+The last operative abstraction-gap is given by the <k>construction of the map</k> of the room.
+
+<h3>Logical Architecture</h3>
+In the relevant aspects it was said that system has two main components then logical architecture is the following:
+
+<table style="width:98%">
+    <tbody>	
+    <tr>
+    <td style="width:40%" >
+     <center><img src="./img/logical_architecture_schema.png" alt="logical architecture schema" width="90%" ></center>
+	<center><img src="./img/logical_architecture_legend.png" alt="logical architecture legend" width="80%" ></center>
+     
+    
+    </td>
+    <td>For now <ks>cautiousExplorerActors</ks> it's a generic component (entity) and it will be clarified in progect phase even if we can say that it is composed by some actors. <ks>WEnv</ks> is the environment of the robot able to receive commands via HTTP or websocket.
+    <br/><br/>
+    About interaction instead:
+    <ul>
+        <li>the use of <ks>HTTP</ks> seems very suitable and very portable thanks to the existence of lots of API;</li>
+        <li>the use of <ks>websocket</ks> could be much more efficent decreasing the overhead costs of HTTP messages and in addition to the usage of this component allows asynchronous interation in a natural way. In order to satisfy the requirements, websocket is needed for the asynchronous interaction.</li>
+    </ul>
+    </td>
+    </tr>
+    </tbody>
+</table>
+</br>
+
+<h3>Exploration Logic</h3>
+
+<table style="width:98%">
+	<tr><td style="width:40%">
+		<center><img src="./img/exploration.png" alt="exploration logic" width="90%" ></center>
+		</td>
+		<td>
+			As said in the requirement anlysis, the consumer did not specify how the robot should move to explorate the room.
+			The cril language let us to specify the time of a single move of the robot than, if we set a constant time (<ks>single move time</ks>) for all forward move, it's possible represent the room into a cartesian plan. The distance of the points in the plan is called <ks>Robot Unit</ks> (RU) and it is the distance travelled by the robot in a <i>single move time</i>.</br>
+			We decide that an efficient way it to proceed by making a sort of <i>waves</i> like in the image (<ks>explorarion wave</ks>).
+		</td>
+	</tr>
+</table>
+
+<h3>Collision Coping</h3>
+
+<table style="width:98%">
+	<tr><td style="width:60%">
+		<center><img src="./img/exploration_obstacle_find.png" alt="collision coping" width="80%" heigh="80%"></center>
+		</td>
+		<td>
+			<center><h4>Case a: single obstacle</h4></center>
+			Suppose that the robot is making an exploration wave and at some point the robot collide with an obstacle <i>(1)</i>: then the robot mark the point ad occupied by an obstacle and immediately returns to the den <i>(2)</i>. After that, the robot must complete the exploration wave so he has to <i>bypass</i> the obstacle and he can make it passing around him <i>(3)</i> and then ending the wave <i>(4)</i>. If at the point 3 the robot finds another obstacle, he should do the same thing and try to bypass also this new one.
+		</td>
+	</tr>
+	<tr><td style="width:60%">
+		<center><img src="./img/exploration_obstacle_find_2.png" alt="collision coping (b)" width="80%" heigh="80%" ></center>
+		</td>
+		<td>
+			<center><h4>Case b: two diagonal obstacles</h4></center>
+			It is possible that in the points <i>(3)</i> of the first image the robot finds another obstacle in the position specified in the left image <i>(1b)</i>. The new one obtsacle must also be bypassed with the same way (after that the robot is returned to the den). However, if the obstacle is in this position there is a <i>lost point</i> of the wave (yellow diamond in <i>(2b)</i>, we called it <ks>ghost point</ks>). Robot can recever this point at the next wave with a small deviation <i>(3b)</i> and after normally continues the wave <i>(4b)</i>.
+		</td>
+	</tr>
+	<tr><td style="width:60%">
+		<center><img src="./img/exploration_obstacle_find_3.png" alt="collision coping (c)" width="80%" heigh="80%" ></center>
+		</td>
+		<td>
+			<center><h4>Case c: two horizontal obstacles</h4></center>
+			It is also possible that in the points <i>(3)</i> of the first image the robot finds another obstacle in the position specified in the left image <i>(1c)</i>. The new one obtsacle must also be bypassed (after that the robot is returned to the den) in this simple way in order to terminate the current wave <i>(2c)</i>.
+		</td>
+	</tr>
+	<tr><td style="width:60%">
+		<center><img src="./img/exploration_obstacle_find_4.png" alt="collision coping (c)" width="80%" heigh="80%" ></center>
+		</td>
+		<td>
+			<center><h4>Case d: two vertical obstacles</h4></center>
+			Suppose that the robot has encountered a new one obstacle that is vertical to another found in the previous one wave. In this case he has to bypass the obstacles like in <i>(1d)</i> and after restores the wave <i>(2d)</i>. Notice that in order to apply this solution it's needed at least one free point above the two obstacles. Otherwise the case is more complicated and we well talk about it later.
+		</td>
+	</tr>
+</table>
+
+<h3>Boundary Detection</h3>
+
+<table style="width:98%">
+	<tr><td style="width:60%">
+		<center><img src="./img/exploration_boundary_detection.png" alt="boundary detection" width="80%" heigh="80%"></center>
+		</td>
+		<td>
+			<center><h4>Case a: right boundary side detection</h4></center>
+			At a certain wave, the robot will collide with boundary without knowing it's it <i>(1)</i>. Then robot several tries to bypass all <i>fictitious</i> obstacle represented by the right side of the boundary <i>(2)</i> until he marks an entire line <i>(3)</i> terminating the current wave. When the start the new wave, the robot newly collides with the boudary but at this time he returns to den and then starts the next way without trying to bypass the 'obstacle'.
+		</td>
+	</tr>
+	<tr><td style="width:60%">
+		<center><img src="./img/exploration_boundary_detection_2.png" alt="boundary detection (b)" width="80%" heigh="80%" ></center>
+		</td>
+		<td>
+			<center><h4>Case b: south boundary side detection</h4></center>
+			When the robot has done the last wave into the room, he start the <i>last</i> wave and collides with the south side of the boundary <i>(1b)</i>. After that, he tries to bypass the <i>fictitous</i> obstacle repesented by the same side and makes it several times <i>(2b)</i>. When he marks all the side, he ends the exploration <i>(3c)</i>.
+		</td>
+	</tr>
+	<tr><td style="width:60%">
+		<center><img src="./img/exploration_boundary_detection_3.png" alt="boundary detection (c)" width="80%" heigh="80%" ></center>
+		</td>
+		<td>
+			<center><h4>Case c: false right side</h4></center>
+			It is possible that there are lots of obstacle that form a vertical line <i>deluding</i> the robot that it is the right side of the boundary. In this case it's also possible to have some <ks>ghost lines</ks> <i>(1c)</i> that must be recovered <i>(2c)</i>. It could be very difficult to recover these lines but simplifying the robot should recovers theese with a strong logic  and after he must restores the current wave <i>(3c)</i> and terminates it <i>(4c)</i>. Pay attention that if the situation is the one on the left, the robot can not return to the den like a normal wave but he has to bypass the line formed by the obstacles.
+		</td>
+	</tr>
+</table>
+
+
+
+<h3>Remarks</h3>
+ We observe that:
+<ul>
+<li>The specification of the exact 'nature' of our <em>cautiousExplorerActors</em> software is left to the designer. 
+However, we can say here that is it <b>not a database, or a function or an object</b> and that it is composed by some actors.  
+<li>To make our <em>cautiousExplorerActors</em> software <k>as much as possibile independent</k> from the undelying communication protocols,
+the designer could make reference to proper <a href="https://it.wikipedia.org/wiki/Design_pattern" target="web"><em>design pattern</em></a>, 
+e.g.
+<a href="https://it.wikipedia.org/wiki/Adapter_pattern" target="web"><ks>Adapter</ks></a>, 
+<a href="https://it.wikipedia.org/wiki/Bridge_pattern" target="web"><ks>Bridge</ks></a>,
+<a href="https://it.wikipedia.org/wiki/Fa%C3%A7ade_pattern" target="web"><ks>Facade</ks></a>.
+ </li>
+<li>
+It is <k>not</k> quite easy to define <k>what the robot has to do</k> the meet the requirements and memory map is needed in order to do an efficient exploration. However we make a cumulative algorithm for the exploration:
+<pre>
+let us define <kc>emum direction {UP,DOWN,LEFT,RIGHT}</kc>;
+let us define <kc>map room_map</kc>;
+let us define <kc>int wave</kc>;
+the robot start in the DEN position, direction=DOWN, wave = 0;
+do
+  1) wave++;
+  do
+    1) send the robot the request to do the next step of the wave;
+    2) if collision or sonar information are detected then cople it;
+    3) propertly update room_map;
+  while the wave is not finished;
+while robot does not detect bot the south and the right side;	
+</pre>
+</li>
+
+</div>
+
+<h2>Test plans</h2> 
+
+
+<h2>Project</h2> 
+ 
+</div>
+
+<h2>Testing</h2> 
+ 
+
+<h2>Deployment</h2> 
+
+ 
+<h2>Maintenance</h2> 
+ 
+<!-- USEFUL
+<table style="width:100%" border="1">
+<tr>
+<td style="width:50%">
+</td>
+<td></td>
+</tr>
+</table>
+ QUESTIONS:
+chiarisce cosa il committente intende con 'Optionally'  
+chiarisce cosa il committente intende con 'should remember' 
+chiarisce cosa il committente intende con 'mental map'
+definisce la user story in modo da comprendere TUTTI i requisiti (anche opzionali)
+discute se sia meglio avvalersi di HTTP o delle websocket e perchè
+discute se sia meglio usare il linguaggio di comando cril, aril (o altro) e perchè
+discute se sia meglio muovere il robot in modo random o in modo organizzato 
+discute se il ritorno alla den debba/possa avvenire senza ricalcare il percorso effettuato
+presenta ogni TestPlan collegandolo ad una user story e in modo 'concreto' (non come un insieme di intenti)
+propone diverse tipologie di scene/situazioni per il testing
+individua e propone (motivandola) una lista di priorità per il soddisfacimento dei requisiti 
+presenta una stima dei tempi di realizzazione 
+presenta un elenco delle risorse che sarebbe opportuno avere e/o procurarsi
+presenta una architettura di progetto
+presenta dettagli di progetto che permettono una precisa implementazione da parte di chi legge
+pone in evidenza le parti di funzionamento proattivo e quelle di funzionamento reattivo
+ECCEDE nelle dimensioni del file (al momento > 1600Kb)
+
+
+-->
+	      	
+<br/><br/> 	
+</div>  
+
+<div style="background-color:rgba(86, 56, 253, 0.9); width:60%;text-align:center;color:white; margin: auto">
+<p>By student</br>
+    Name: Luca Marchegiani</br>
+    Email: luca.marchegiani3@studio.unibo.it</br>
+    Git Repo:  <a href="https://github.com/LM-96/MarchegianiLuca" target="web" style="color:white">https://github.com/LM-96/MarchegianiLuca</a></p>
+<img src="./img/profile_2.png" alt="mbot" width="40%" height="40%">
+</div> 
+</body>
+</html>

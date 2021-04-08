@@ -1,2 +1,0 @@
-spec( protocol( "WS" ), url( "localHost:8091" ) ).
-#TAKES THE FIRST LINE ONLY
