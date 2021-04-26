@@ -6,12 +6,10 @@ import it.unibo.actor0.ApplMessage
 import it.unibo.actor0.MsgUtil
 import it.unibo.robotService.ApplMsgs
 import it.unibo.robotService.BasicStepRobotActor
-import it.unibo.supports.NaiveActorKotlinObserver
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 import mapRoomKotlin.TripInfo
-import netscape.javascript.JSObject
 import org.json.JSONObject
 
 enum class State{
@@ -20,7 +18,7 @@ enum class State{
 
 class BoundaryWalkerActor(name: String, scope: CoroutineScope) : ActorBasicKotlin(name, scope) {
 
-    private val DEFAULT_TIME = "350"
+    private val TIME_UNIT = "350"
 
     protected var state : State = State.START
     private var moves : TripInfo = TripInfo()
@@ -29,7 +27,7 @@ class BoundaryWalkerActor(name: String, scope: CoroutineScope) : ActorBasicKotli
     private var dimensions : MutableList<Double> = mutableListOf()
 
     private val stepMsg =
-        MsgUtil.buildDispatch(name, ApplMsgs.stepId, ApplMsgs.stepMsg.replace("TIME", DEFAULT_TIME),
+        MsgUtil.buildDispatch(name, ApplMsgs.stepId, ApplMsgs.stepMsg.replace("TIME", TIME_UNIT),
         "stepRobot")
     private val forwardMsg =
         MsgUtil.buildDispatch(name, ApplMsgs.robotMovecmdMsg,
@@ -69,7 +67,7 @@ class BoundaryWalkerActor(name: String, scope: CoroutineScope) : ActorBasicKotli
                     doStep();
                 } else if(x=="stepFail") {
                     dimensions.set(stepNum-1,
-                        dimensions.get(stepNum - 1)+ y.toDouble()/DEFAULT_TIME.toDouble())
+                        dimensions.get(stepNum - 1)+ y.toDouble()/TIME_UNIT.toDouble())
                     delay(500)
                     doFwd()
                 } else if(x == "moveForward" && y == "false") {

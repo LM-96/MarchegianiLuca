@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <!--
+<link rel="stylesheet" type="text/css" href="../css/issStyle1.css">
+<script type="text/javascript" src="../css/issStyle.js"></script>
+-->
+<style type="text/css">
+body
+{
+    margin-left:  30px;
+    margin-right: 30px;
+};
+
+P
+{
+    font-family: Tahoma;
+    font-size: 10pt;
+};
+
+a, a:visited, a:active, a:link, a:hover {
+    text-decoration: underline;
+    color: #545454;
+    background-color: transparent;
+	font-size: 93%;
+}
+
+a:hover {
+    background-color: #cccccc;
+}
+
+
+hr {
+    clear: both;
+    height: 1px;
+    color: #242424;
+    background-color: transparent;
+}
+
+h1, h2, h3 {
+    color: #242424;
+    clear: left;
+    font: 100% Tahoma, Helvetica, Arial, sans-serif;
+    margin-bottom: 0.5em;
+    padding-top: 0.5em;
+	border-radius: 10px;
+	padding: 5px;
+}
+
+top {
+	width: 100%;
+}
+
+
+#i {
+    color: #ff1010;
+}
+tt{
+	font-family: "Arial";
+    font-size: 90%;
+	color: #006600;
+}
+em{
+	font-family: "Arial";
+    font-size: 80%;
+	font-weight: bold;
+	border-style:solid;
+	border-color: #abe876;
+    color: #1632cc;
+}
+bc{
+	font-family: "Arial";
+	font-size: 90%;
+	font-weight: bold;
+    color: #990000;
+	background-color: #fcf8c7;
+}
+ks{
+	font-family: "Arial";
+	font-weight: bold;
+    color: #0000CD	;
+	font-size: 90%;
+}
+kc{
+	font-family: "Arial";
+	font-weight: bold;
+    color: #008000	;
+	font-size: 90%;
+}
+pre{
+	font-family: "Consolas";
+	font-size: 85%;
+	background-color: #f5f5f5;
+	border: 1.5px solid silver;
+	padding: 5px;
+}
+m{
+	font-family: "Helvetica";
+	line-height: 100%;
+ 	font-size: 75%;
+}
+div.body{
+	 
+    font-size: 18px;
+}
+k{
+    color: #990000;
+	font-weight: bold;
+	font-size: 90%;
+}
+h1 {
+    font-size: 150%;
+    background-color: #b2c0ff;
+	padding: 10px;
+}
+
+h2 {
+    background-color: #9ed8ff;
+    font-size: 130%;
+}
+
+h3 {
+	background-color: #e6ccff;
+    font-size: 100%;
+}
+h4 {
+    background-color: #ccffcc;
+    font-size: 100%;
+	width: 95%;
+	border-radius: 5px;
+	padding: 2px;
+}
+h5 {
+    background-color: #d5ffb0;
+    font-size: 100%;
+
+}
+div.req{
+	background-color: #d9ffb3;
+    font-size: 18px;
+	width: 700px;
+    border: 3px solid green;
+    padding: 15px;
+    margin: 10px;
+}
+div.remark{
+	background-color: #E3F2FD;
+    border: 1.5px solid #d5f2ed;
+    padding: 15px;
+    margin: 10px;
+	border-radius: 25px;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+ol, ul, li {
+  margin: 0;
+  margin-left: 10px;
+  padding: 0;
+  padding-bottom: 5px;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+img {
+	border: 1.5px solid #d5f2ed
+
+}
+
+a, a:visited, a:active, a:link, a:hover {
+    text-decoration: underline;
+    color: #545454;
+    background-color: transparent;
+}
+
+div.wrapdesc{
+	width: 90%;
+	margin: auto;
+}
+
+div.imagedesc{
+	width: 85%;
+	margin: auto;
+}
+</style>
+    
+<head>
+   
+<title>BoundaryWalk in Kotlin</title></head>
+    
+<body>
+<div id="top">
+<h1>Lab ISS | boundaryWalk using BasicStepRobotActor in kotlin <font size="5"></font> </h1>
+</div>  
+
+<div class="body"> 
+<h2>Introduction</h2>
+ 
+ 
+<h2>Requirements</h2>
+
+ 
+<div class="remark">
+Design and build the <a href="https://htmlpreview.github.io/?https://github.com/anatali/issLab2021/blob/main/it.unibo.boundaryWalk/userDocs/BoundaryWalk.html" target="lab"><em>BoundaryWalk.html</em></a> using <a href="https://github.com/anatali/issLab2021/blob/main/it.unibo.kotlinSupports/app/src/main/kotlin/it/unibo/robotService/BasicStepRobotActor.kt" target="code"><em>BasicStepRobotActor</em></a>.
+</div>
+
+ 
+
+<h2>Requirement analysis</h2>
+<div class="remark">
+	The requirements are the same analized in <a href="https://htmlpreview.github.io/?https://github.com/anatali/issLab2021/blob/main/it.unibo.boundaryWalk/userDocs/BoundaryWalk.html" target="lab"><em>BoundaryWalk.html</em></a> with only one new that consists into the use of <a href="https://github.com/anatali/issLab2021/blob/main/it.unibo.kotlinSupports/app/src/main/kotlin/it/unibo/robotService/BasicStepRobotActor.kt" target="code"><em>BasicStepRobotActor</em></a> with Kotlin language to build the system.</br>
+	This actor has a large explanation in <a href="https://htmlpreview.github.io/?https://github.com/anatali/issLab2021/blob/main/it.unibo.kotlinSupports/userDocs/ActorWithKotlinSupport.html" target="lab"><em>ActorWithKotlinSupport.html</em></a>.
+</div>
+
+<h2>Problem analysis</h2>
+<div class="remark">
+	<table style="width:98%">
+			<tr><td style="width:60%">
+				<center><img src="./img/precision_unit.png" alt="precision unit" width="80%" heigh="80%" ></center></td><td>
+			Using the <em>BasicStepRobotActor</em> the robot can move <ks>step-by-step</ks>. Then, we called <ks>Robot Unit (RU)</ks> the space traveled by the robot in a <ks>Time Unit (TU)</ks> from a single step: <k>all steps have the same duration (1TU).</k></br>
+		It means that in the last step of a <i>side walking</i> it is possible that the robot has no possibility to do the entire step because he collides with the <ks>wall</ks> before concluding. In addition to this, by default, <em>BasicStepRobotActor</em> move backward the robot when he collides, returning him to last cell (green arrow in the image).</br>
+	This can be a very important problem if the application is built to measure the boundary of the room: its lenght can only be in <k>integer RU</k> (then, an approximation if the real measure of the leght is not a multiple of RU).
+	Fortunately, <em>StepRobotActor</em> has a timer that let us to measure the exact length of the last step, so we can measure the boundary in a good way.</br>
+	However, the problem persists if the consumer requires that the robot must walk <k>exacltly flanking the boundary side</k> so it is needed to <ks>correct the moveBackward with a moveForward</ks> that place the robot in a correct way.
+			</td></tr>
+	</table>
+
+</div>
+
+<div class="remark">
+		<ks>In order to make the robot walk exactly flanking all the side of the boundary, when he collides and the <em>BasicStepRobotActor</em> moves him backward, to send a <i>moveForward message</i>, the project-manager shoud directly use a <i>robotmove command</i> instead of a <i>step message</i> then, when robot newly collides, it is possible to send the <i>turnLeft command</i>.</ks>	
+</div>
+
+<h2>Test plans</h2> 
+
+
+<h2>Project</h2>
+To realize the <k>boundary logic</k> we will create a new actor <em>BoundaryWalkerActor</em> that incapsulates the <em>StepRobotActor</em> to move the robot.
+In addition to this, we can reuse the <k>FSM</k> explained in <a href="https://htmlpreview.github.io/?https://github.com/anatali/issLab2021/blob/main/it.unibo.supports/userDocs/wssupportAsActorJava.html" target="web">wssupportAsActorJava</a> for the <em>BoundaryWalk</em> problem (java class <a href="https://github.com/anatali/issLab2021/blob/main/it.unibo.virtualrobotclient/app/src/main/java/it/unibo/robotWithActorJava/BoundaryWalkerActor.java" target="code">BoundaryWalkerActor.java</a>).
+
+<table style="width:98%">
+			<tr><td style="width:60%">
+				<center><img src="./img/fsm_boundary.png" alt="boundary walker as fsm" width="80%" heigh="80%" ></center></td><td>
+				<a href="https://github.com/LM-96/MarchegianiLuca/blob/boundaryWalkerActorKotlin/app/src/main/kotlin/it/unibo/boundary/BoundaryWalkerActor.kt" target="code">BoundaryWalkerActor.kt</a>:</br></br>		
+					
+				the new <ks>FSM</ks> is very similar to the one used in Java. However:
+				<ul>
+				<li>the fsm is activated with an input each time the <ks>handleInput</ks> receives <a href="https://github.com/anatali/issLab2021/blob/main/it.unibo.kotlinSupports/app/src/main/kotlin/it/unibo/actor0/ApplMessage.kt" targer="code">ApplMessages</a> from the <ks>main</ks> to start and also from the <em>BasicStepRobotActor</em>;</li>
+				<li>the actions related to a state transition are performed when the specified input-message is received and the conditions are true;</li>
+				<li>it's been added a new functionality that measure the length of the entire boundary.</li></ul>
+			</td></tr>
+	</table>
+
+<h2>Testing</h2> 
+ 
+
+<h2>Deployment</h2> 
+
+ 
+<h2>Maintenance</h2> 
+ 
+<!-- USEFUL
+<table style="width:100%" border="1">
+<tr>
+<td style="width:50%">
+</td>
+<td></td>
+</tr>
+</table>
+-->
+	      	
+<br/><br/> 	
+</div>  
+
+<div style="background-color:rgba(86, 56, 253, 0.9); width:60%;text-align:center;color:white; margin: auto">
+<p>By student</br>
+    Name: Luca Marchegiani</br>
+    Email: luca.marchegiani3@studio.unibo.it</br>
+    Git Repo:  <a href="https://github.com/LM-96/MarchegianiLuca" target="web" style="color:white">https://github.com/LM-96/MarchegianiLuca</a></p>
+<img src="./img/profile_2.png" alt="mbot" width="40%" height="40%">
+</div> 
+</body>
+</html>
