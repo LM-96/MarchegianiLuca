@@ -1,8 +1,12 @@
 package mapRoomKotlin
 
+import com.andreapivetta.kolor.Color
+import it.unibo.actor0.sysUtil
+
 object mapUtil{
- 	private var state = RobotState(0,0,Direction.DOWN)	 
+ 	var state = RobotState(0,0,Direction.DOWN)
 	var map   = RoomMap.getRoomMap()
+
 
     @JvmStatic fun getMapAndClean() : String{ //(fName : String="storedMap.txt")
 		val outS = map.toString()
@@ -10,14 +14,25 @@ object mapUtil{
 		return outS
 	}
 
+
+//=================================================================================
     @JvmStatic fun getMapRep() : String{
         return map.toString()
     }
+    @JvmStatic fun getDirection() : String{
+        return state.direction.toString()
+    }
 
-    @JvmStatic fun setObstacle(){
+    private fun setObstacleOnCell(){
+        sysUtil.colorPrint("setObstacleOnCell ${state.x},${state.y}", Color.RED)
 		map.put( state.x,  state.y, Box(true, false, false))
 	}
-
+    @JvmStatic
+    fun setObstacle() {  //trick!!
+        doMove("w")
+        setObstacleOnCell()
+        doMove("s")
+    }
     @JvmStatic fun doMove(move: String ) {
        val x = state.x
        val y = state.y
@@ -30,6 +45,7 @@ object mapUtil{
                      map.put(state.x, state.y, Box(false, false, true))
                 }
                 "s" -> {
+                     map.put(x, y, Box(false, false, false)) //clean the cell
 	                 state = state.backward();
                      map.put(state.x, state.y, Box(false, false, true))
                 }
@@ -57,7 +73,7 @@ object mapUtil{
 	}
 
     @JvmStatic fun showMap(){
-		println( "$map"  )
+		sysUtil.colorPrintNoTab( "$map ${state}", Color.CYAN  )
 	}
 	
 }

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="347da28e-4913-421a-9641-206c46fc96b9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/MarchegianiLuca.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/MarchegianiLuca.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/it.unibo.virtualrobotclient.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoResumableBoundaryWalker/Commands.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoResumableBoundaryWalker/ConsoleGui.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoResumableBoundaryWalker/ConsoleGui.manifest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoResumableBoundaryWalker/GoResumableBoundaryWalker_v1.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoResumableBoundaryWalker/GoResumableBoundaryWalker_v2.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoResumableBoundaryWalker/IssSupport.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoResumableBoundaryWalker/ResumableBoundaryWalker_v2.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoResumableBoundaryWalker/ResumableCore/ResumableBoundaryWalker_v1.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoResumableBoundaryWalker/ResumableCore/ResumableBoundaryWalker_v2.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoResumableBoundaryWalker/app.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoResumableBoundaryWalker/rsrc.syso" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoResumableBoundaryWalker/settings/ws.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HttpBasicConfig.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IssProtocolConfig.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IssRobotConfig.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebsocketBasicConfig.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/html/WEnv-WebSocket.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/annotations/AppRobotSpec.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/annotations/ArilRobotSpec.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/annotations/InjectSupportSpec.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/annotations/IssAnnotationUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/annotations/IssProtocolSpec.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/annotations/ProtocolInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/annotations/RobotMoveTimeSpec.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/annotations/VirtualRobotSpec.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/consolegui/ButtonAsGui.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/consolegui/ButtonBasic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/consolegui/ConsoleGui.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/consolegui/ConsoleGuiActor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/consolegui/GuiUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/consolegui/mbotPng.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/interaction/IssObserver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/interaction/IssOperations.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/interaction/MsgRobotUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/resumablebw/AnotherObserver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/resumablebw/ResumableBoundaryLogic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/resumablebw/ResumableRobotBoundary.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/resumablebw/RobotApplInputController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/resumablebw/RobotMovesInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/robotWithActorJava/MainRobotActorJava.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/robotWithActorJava/NaiveObserverActor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/robotWithActorJava/ResumableBoundaryWalkerActor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/robotWithActorJava/RobotMovesInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/supports/AnswerAvailable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/supports/IssArilRobotSupport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/supports/IssCommSupport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/supports/IssCommsSupportFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/supports/IssHttpSupport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/supports/IssObservableCommSupport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/supports/IssWsSupport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/supports/RobotApplicationStarter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/wenv/ActorNaive.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/wenv/ActorRobotObserver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/wenv/ClientBasicMovesAsynch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/wenv/ClientBoundaryUsingPost.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/wenv/ClientBoundaryUsingPostBasic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/wenv/ClientBoundaryUsingWebsock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/wenv/ClientBoundaryWebsockArilAsynch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/wenv/ClientBoundaryWebsockBasicAsynch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/wenv/ClientBoundaryWebsockBasicSynch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/wenv/ClientNaiveUsingPost.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/wenv/ClientNaiveUsingWs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/wenv/RobotBoundaryLogic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/wenv/RobotControllerBoundary.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/wenv/RobotInputController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/wenv/RobotMovesInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/it/unibo/wenv/RobotObserver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/js/controlrelated/clientToWenvControl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/js/http/axiosClientToWenv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/js/http/httpClientToWenv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/js/wsclient/wsclientBoundaryLogic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/js/wsclient/wsclientBoundaryToWenv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/js/wsclient/wsclientToWenv.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/js/wsclient/wsclientToWenv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/js/wsnaive/aclientws.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/js/wsnaive/serverws.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/js/wsnaive/websocket.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/mapRoomKotlin/Box.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/mapRoomKotlin/Box.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/mapRoomKotlin/Direction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/mapRoomKotlin/Direction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/mapRoomKotlin/MainMapUsage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/mapRoomKotlin/MainMapUsage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/mapRoomKotlin/RobotState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/mapRoomKotlin/RobotState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/mapRoomKotlin/RoomMap.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/mapRoomKotlin/RoomMap.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/mapRoomKotlin/mapUtil.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/mapRoomKotlin/mapUtil.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/mapRoomKotlin/testMap.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/mapRoomKotlin/testMap.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/it/unibo/wenv/TestClientUsingPostJava.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/ClientBoundaryWebsockArilAsynch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/ClientUsingSocket.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/ClientUsingSocketIO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/ClientWebsockJavax.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/RobotBoundaryLogic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/RobotInputController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/RobotMovesInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/RobotSupport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/UsingConnTcp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/VirtualrobotUsageSupport.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/boundaryReactiveWebsocket.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/boundaryReactiveWs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/boundaryWalkActions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/clientToWenvWebsocket.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/consolegui/ButtonAsGui.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/consolegui/ButtonBasic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/consolegui/ConsoleGui.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/consolegui/GuiUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/consolegui/mbotPng.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/fsm/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/fsm/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/fsm/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/fsm/.idea/fsm.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/fsm/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/fsm/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/fsm/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/fsm/AppMsg.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/fsm/Fsm.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/fsm/Messages.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/fsm/Stepper.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/fsm/Walker.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/fsm/WalkerHttpCaller.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/fsm/demoDSL.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/fsm/timer.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/interaction/UseWEnvConnSupport.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/interaction/UseWEnvHTTPSupport.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/interaction/WEnvConnSupport.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/interaction/WEnvConnSupportNoChannel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/interaction/WEnvHTTPSupport.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/interaction/clientsFsmNaive/robotActorAppMsg.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/interaction/clientsFsmNaive/robotActorAppMsgUsage.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/interaction/clientsFsmNaive/robotActorTry.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/interaction/clientsFsmNaive/robotActorTryUsage.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/temp/UsingConnTcp.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/temp/WebSocketViaChannel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/temp/WssTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/temp/koltinActorExample.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/it/unibo/virtualrobotclient/ClientWebsockJavax.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/mapRoomKotlin/Box.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/mapRoomKotlin/Direction.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/mapRoomKotlin/MainMapUsage.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/mapRoomKotlin/RobotState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/mapRoomKotlin/RoomMap.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/kotlin/mapRoomKotlin/mapUtil.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/maps/Box.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/maps/Functions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/maps/RobotAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/maps/RobotState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/maps/RoomMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backup/tripBoundaryBusinessLogic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mbotPng.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/userDocs/ResumableBoundaryWalkerWithActors.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userDocs/ResumableBoundaryWalkerWithActors.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userDocs/img/.idea/img.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userDocs/img/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userDocs/img/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userDocs/img/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userDocs/img/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userDocs/img/ResumableBoundaryWalkerWithActor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userDocs/img/ResumableBoundaryWalkerWithActor.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/userDocs/img/profile_2.png" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1rhmqVjq5JqJBVKNFmBPPrA7GQZ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="BoundaryWalkerActorKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <module name="it.unibo.boundaryWalkerActorKotlin.app.main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="it.unibo.boundary.BoundaryWalkerActorKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.BoundaryWalkerActorKt" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="347da28e-4913-421a-9641-206c46fc96b9" name="Default Changelist" comment="" />
+      <created>1619436887321</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1619436887321</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
