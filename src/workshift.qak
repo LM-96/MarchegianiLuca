@@ -1,0 +1,95 @@
+System es0
+
+Dispatch 	m1 		: m1(V)
+Dispatch 	m2 		: m2(V)
+Event 		switch 	: switch(V)
+
+Context ctxworkshift ip [ host= "localhost" port= 8048]
+Context ctxsenders ip [host="localhost" port=8049]
+
+QActor workshiftactor context ctxworkshift {
+	State init initial {
+		println("workshiftactor | started")
+	}
+	Transition morning whenEvent switch -> morning
+	
+	State handleM1 {
+			printCurrentMessage
+	}
+	Goto morning
+	
+	State handleM2 {
+			printCurrentMessage
+	}
+	Goto afternoon
+	
+	State morning {
+		println("workshiftactor | [state = morning]")
+	}
+	Transition mtoha
+		whenEvent switch -> afternoon
+		whenMsg m1 -> handleM1
+	
+	State afternoon {
+		println("workshiftactor | [state = afternoon]")
+	}
+	
+	Transition aton
+		whenEvent switch -> night
+		whenMsg m2 -> handleM2
+	
+	State night {
+		println("workshiftactor | [state = night]")
+		println("workshiftactor |  i'm going to sleep. Good night")
+	}
+	
+	Transition ntom whenEvent switch -> morning	
+}/* QActor workshift */
+
+QActor clock context ctxworkshift {
+	State s0 initial {
+		println("clock | started")
+	}
+	Goto morning
+	
+	State morning {
+		emit switch : switch(morning)
+		println("clock | morning started")
+		delay 8000
+		println("clock | morning finished")
+	}
+	Goto afternoon
+	
+	State afternoon {
+		emit switch : switch(afternoon)
+		println("clock | afternoon started")
+		delay 8000
+		println("clock | afternoon ended")
+	}
+	Goto night
+	
+	State night {
+		emit switch : switch(night)
+		println("clock | night started")
+		delay 8000
+		println("clock | night ended")
+	}
+	Goto morning
+} /* QActor clock */
+
+QActor extm1sender context ctxsenders {
+	State s0 initial {
+		[# delay((Math.random() * 5000).toLong()) #]
+		forward workshiftactor -m m1 : m1(m1)
+		println("extm1sender | sent m1 message to workshiftactor")
+	} Goto s0
+} /* QActor extm1sender */
+
+QActor extm2sender context ctxsenders {
+	State s0 initial {
+		[# delay((Math.random() * 5000).toLong()) #]
+		forward workshiftactor -m m2 : m2(m2)
+		println("extm2sender | sent m2 message to workshiftactor")
+	} Goto s0
+} /* QActor ext2sender */
+
