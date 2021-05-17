@@ -1,12 +1,12 @@
 /*
 ================================================================================
-build_workshiftctx.gradle
+build_ctxservice.gradle
 GENERATED ONLY ONCE
 USAGE:	 
-  	gradle  -b build_workshiftctx.gradle eclipse		//to set the dependency on the library
-	gradle  -b build_workshiftctx.gradle distZip
-	gradle  -b build_workshiftctx.gradle -q tasks --all
-	gradle  -b build_workshiftctx.gradle cleanDistDir	//to clean the src directory
+  	gradle  -b build_ctxservice.gradle eclipse		//to set the dependency on the library
+	gradle  -b build_ctxservice.gradle distZip
+	gradle  -b build_ctxservice.gradle -q tasks --all
+	gradle  -b build_ctxservice.gradle cleanDistDir	//to clean the src directory
 ================================================================================
 */
 plugins {

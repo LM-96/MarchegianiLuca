@@ -1,0 +1,76 @@
+System -msglog es3
+
+Request r1 : r1(X)
+Request r2 : r2(X)
+Reply 	a1 : a1(X)
+
+Context ctxservice ip [host="localhost" port=8076]
+
+QActor serviceactor context ctxservice {
+	[# 	var missing_info = false
+		var R = "" #]
+	
+	State init initial {
+		println("serviceactor | started")
+	} Goto waitForRequest
+	
+	State waitForRequest {
+		println("serviceactor | waiting for a request...")
+	} Transition wtoh whenRequest r1 -> handleRequest
+	
+	State handleRequest {
+		printCurrentMessage
+		
+		onMsg(r1 : r1(X)) {
+			[#  R = "${payloadArg(0)}" #]
+		}
+		
+		onMsg(a1 : a1(X)) {
+			println("serviceactor | arrived missed information")
+			[#  R = "${R}_${payloadArg(0)}" #]
+		}
+		
+		[# 
+			missing_info = Random.nextBoolean() #]
+			println("serviceactor | missing_info = ${missing_info}")
+			
+		[#	if(missing_info == false) { #]
+			replyTo r1 with a1 : a1($R)
+			[# R = "" }
+				else #]
+			askFor r2 request r1 : r2(info)
+	} Goto waitForInfo if [# missing_info == true #] else waitForRequest
+	
+	State waitForInfo {
+		println("serviceactor | waiting additional info...")
+	} Transition wtoh whenReply a1 -> handleRequest
+}
+
+
+
+QActor clientactor context ctxservice {
+	State init initial {
+		println("clientactor | started")
+		request serviceactor -m r1 : r1(1)
+		request serviceactor -m r1 : r1(2)
+		request serviceactor -m r1 : r1(3)
+		request serviceactor -m r1 : r1(4)
+	} Goto waitForAnswer
+	
+	State waitForAnswer {
+		println("clientactor | waiting for answer...")
+	} Transition wtoh
+		whenRequest r2 -> handleAskFromServer
+		whenReply a1 -> handleResponse
+	
+	State handleAskFromServer {
+		printCurrentMessage
+		println("clientactor | sending requested info...")
+		replyTo r2 with a1 : a1(a)
+	} Goto waitForAnswer
+	
+	State handleResponse {
+		printCurrentMessage
+		println("clientactor | service answered to me")
+	} Goto waitForAnswer
+}
